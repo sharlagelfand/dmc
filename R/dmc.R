@@ -41,10 +41,10 @@ dmc <- function(color, n = 1, visualize = TRUE) {
       colors <- magick::image_composite(colors, floss_i[["img"]][[1]], offset = paste0("+", 1.1 * w * i, "+0"))
       colors <- magick::image_annotate(colors, paste0(floss_i[["dmc"]], " (", floss_i[["name"]], ")"), size = font, color = "black", location = paste0("+", 1.1 * w * i, "+", h*1.05))
     }
-    colors
+    magick:::`print.magick-image`(colors, info = FALSE)
   }
 
-  # closest_floss
+  closest_floss
 }
 
 floss_dist <- function(red, green, blue, rgb) {
