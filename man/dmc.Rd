@@ -7,12 +7,15 @@
 dmc(color, n = 1, visualize = TRUE)
 }
 \arguments{
-\item{color}{A way to identify the color, either via a colour hex code or the RGB values.}
+\item{color}{A hex code to identify the color, e.g. "#EE8726"}
 
 \item{n}{Number of DMC floss colors to return. Defaults to 1.}
 
-\item{visualize}{Whether to visualize \code{color} versus the closest DMC floss colour(s). Defaults to TRUE.}
+\item{visualize}{Whether to visualize \code{color} versus the closest DMC floss color(s). Defaults to TRUE.}
 }
 \description{
 Find the closest DMC embroidery floss for a given color
+}
+\examples{
+dmc("#EE8726")
 }

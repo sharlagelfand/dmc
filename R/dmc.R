@@ -1,24 +1,24 @@
 #' Find the closest DMC embroidery floss for a given color
 #'
-#' @param color A hex code to identify the color.
+#' @param color A hex code to identify the color, e.g. "#EE8726"
 #' @param n Number of DMC floss colors to return. Defaults to 1.
-#' @param visualize Whether to visualize \code{color} versus the closest DMC floss colour(s). Defaults to TRUE.
+#' @param visualize Whether to visualize \code{color} versus the closest DMC floss color(s). Defaults to TRUE.
 #'
 #' @export
 #'
 #' @examples
 #' dmc("#EE8726")
 dmc <- function(color, n = 1, visualize = TRUE) {
-  color_rgb <- col2rgb(color)
+  color_rgb <- grDevices::col2rgb(color)
   color_rgb <- c(color_rgb)
 
   floss_dists <- floss %>%
-    dplyr::mutate(dist = purrr::pmap_dbl(list(red, green, blue), floss_dist, rgb = color_rgb))
+    dplyr::mutate(dist = purrr::pmap_dbl(list(.data$red, .data$green, .data$blue), floss_dist, rgb = color_rgb))
 
   closest_floss <- floss_dists %>%
-    dplyr::arrange(dist) %>%
-    dplyr::select(-dist) %>%
-    head(n)
+    dplyr::arrange(.data$dist) %>%
+    dplyr::select(-.data$dist) %>%
+    dplyr::slice(1:n)
 
   if (visualize) {
     w <- h <- 150
@@ -33,7 +33,7 @@ dmc <- function(color, n = 1, visualize = TRUE) {
     colors <- magick::image_annotate(colors, color, size = font, color = "black", location = paste0("+0+", h*1.05))
 
     closest_floss_img <- closest_floss %>%
-      dplyr::mutate(img = purrr::map(hex, ~ magick::image_blank(width = w, height = h, color = .x) %>% magick::image_border(color = "black", geometry = "1x1")))
+      dplyr::mutate(img = purrr::map(.data$hex, ~ magick::image_blank(width = w, height = h, color = .x) %>% magick::image_border(color = "black", geometry = "1x1")))
 
     for (i in 1:nrow(closest_floss_img)) {
       floss_i <- closest_floss_img[i, ]
