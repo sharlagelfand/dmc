@@ -74,7 +74,7 @@ print.dmc <- function(x) {
   is_knit_image <- isTRUE(getOption("knitr.in.progress"))
   if (isTRUE(getOption("jupyter.in_kernel"))) {
     print(df)
-    jupyter_print_image(img)
+    magick:::jupyter_print_image(img)
   }
   else if (!is_knit_image && !magick:::magick_image_dead(img) && length(img)) {
     previewer <- getOption("magick.viewer")
