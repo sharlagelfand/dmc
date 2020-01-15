@@ -2,17 +2,17 @@
 % Please edit documentation in R/dmc.R
 \name{dmc}
 \alias{dmc}
-\title{Find the closest DMC embroidery floss for a given colour}
+\title{Find the closest DMC embroidery floss for a given color}
 \usage{
-dmc(colour, n = 1, visualize = TRUE)
+dmc(color, n = 1, visualize = TRUE)
 }
 \arguments{
-\item{colour}{A way to identify the color, either via a colour hex code or the RGB values.}
+\item{color}{A way to identify the color, either via a colour hex code or the RGB values.}
 
-\item{n}{Number of DMC floss colours to return. Defaults to 1.}
+\item{n}{Number of DMC floss colors to return. Defaults to 1.}
 
-\item{visualize}{Whether to visualize \code{colour} versus the closest DMC floss colour(s). Defaults to TRUE.}
+\item{visualize}{Whether to visualize \code{color} versus the closest DMC floss colour(s). Defaults to TRUE.}
 }
 \description{
-Find the closest DMC embroidery floss for a given colour
+Find the closest DMC embroidery floss for a given color
 }

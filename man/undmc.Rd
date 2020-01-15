@@ -14,8 +14,5 @@ Return the hex code and RGB values of a given DMC embroidery floss
 }
 \examples{
 undmc("Ecru")
-
-undmc("310")
-
 undmc(310)
 }
