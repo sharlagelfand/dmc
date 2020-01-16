@@ -38,11 +38,19 @@ floss_dist <- function(red, green, blue, rgb) {
   sum((rgb - floss_rgb)^2)
 }
 
+wrap_name <- function(x){
+  if(nchar(x) > 23) {
+    stringr::str_replace(x, "- ", "-\n")
+  } else {
+    x
+  }
+}
+
 dmc_viz <- function(color, closest_floss, n) {
   w <- h <- 150
-  font <- 12
+  font <- 14
 
-  blank_img <- magick::image_blank(width = (n + 1) * w * 1.1, height = h + 25, color = "white")
+  blank_img <- magick::image_blank(width = (n + 1) * w * 1.1, height = h + 50, color = "white")
 
   color_img <- magick::image_blank(width = w, height = h, color = color)
   color_img <- magick::image_border(color_img, color = "black", geometry = "1x1")
@@ -57,7 +65,7 @@ dmc_viz <- function(color, closest_floss, n) {
     floss_i <- closest_floss_img[i, ]
 
     colors <- magick::image_composite(colors, floss_i[["img"]][[1]], offset = paste0("+", 1.1 * w * i, "+0"))
-    colors <- magick::image_annotate(colors, paste0(floss_i[["dmc"]], " (", floss_i[["name"]], ")"), size = font, color = "black", location = paste0("+", 1.1 * w * i, "+", h*1.05))
+    colors <- magick::image_annotate(colors, wrap_name(paste0(floss_i[["dmc"]], " (", floss_i[["name"]], ")")), size = font, color = "black", location = paste0("+", 1.1 * w * i, "+", h*1.05))
   }
 
   colors
