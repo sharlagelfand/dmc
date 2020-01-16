@@ -60,14 +60,19 @@ And to turn off the visualization of the colors:
 dmc(dplyr_background, visualize = FALSE)
 ```
 
-If I want to go the *other* way and just find the hex/RGB information for a given DMC floss, I can use `undmc()`.
+If I want to go the *other* way and just find the hex/RGB information for a given DMC floss, I can use `undmc()`. By default, this visualizes the DMC floss:
 
 ```{r undmc}
 undmc("Ecru")
-undmc(310)
 ```
 
-This mostly just takes the DMC floss number, except in cases where there isn't one (e.g., Ecru).
+Again, the visualization can be turned off:
+
+```{r undmc-no-viz}
+undmc(310, visualize = FALSE)
+```
+
+`undmc()` mostly just takes the DMC floss number, except in cases where there isn't one (e.g., Ecru).
 
 A full list of floss colors in the package is available via `floss`:
 

@@ -74,7 +74,8 @@ dmc(dplyr_background, visualize = FALSE)
 ```
 
 If I want to go the *other* way and just find the hex/RGB information
-for a given DMC floss, I can use `undmc()`.
+for a given DMC floss, I can use `undmc()`. By default, this visualizes
+the DMC floss:
 
 ``` r
 undmc("Ecru")
@@ -82,15 +83,22 @@ undmc("Ecru")
 #>   dmc   name  hex       red green  blue
 #>   <chr> <chr> <chr>   <dbl> <dbl> <dbl>
 #> 1 Ecru  Ecru  #F0EADA   240   234   218
-undmc(310)
+```
+
+![](man/figures/README-undmc-1.png)<!-- -->
+
+Again, the visualization can be turned off:
+
+``` r
+undmc(310, visualize = FALSE)
 #> # A tibble: 1 x 6
 #>   dmc   name  hex       red green  blue
 #>   <chr> <chr> <chr>   <dbl> <dbl> <dbl>
 #> 1 310   Black #000000     0     0     0
 ```
 
-This mostly just takes the DMC floss number, except in cases where there
-isn’t one (e.g., Ecru).
+`undmc()` mostly just takes the DMC floss number, except in cases where
+there isn’t one (e.g., Ecru).
 
 A full list of floss colors in the package is available via `floss`:
 
