@@ -9,68 +9,63 @@
 #' @examples
 #' dmc("#EE8726")
 dmc <- function(color, n = 1, visualize = TRUE) {
-  check_color(color)
-  check_n(n)
+  .dmc(color = color, n = n, visualize = visualize, method = "dmc")
+}
 
-  color_rgb <- grDevices::col2rgb(color)
-  color_rgb <- c(color_rgb)
 
-  floss_dists <- floss %>%
-    dplyr::mutate(dist = purrr::pmap_dbl(list(.data$red, .data$green, .data$blue), floss_dist, rgb = color_rgb))
+#' Return the hex code and RGB values of a given DMC embroidery floss
+#'
+#' @param dmc DMC floss identifier. Usually the floss number (e.g. 210), or the name if it does not commonly have a number (e.g. "Ecru").
+#' @param visualize Whether to visualize the DMC floss color. Defaults to TRUE.
+#'
+#' @export
+#'
+#' @examples
+#' undmc("Ecru")
+#' undmc(310)
+#' undmc(c(210, 211))
+undmc <- function(dmc, visualize = TRUE) {
+  .dmc(color = dmc, n = 0, visualize = visualize, method = "undmc")
+}
 
-  closest_floss <- floss_dists %>%
-    dplyr::arrange(.data$dist) %>%
-    dplyr::select(-.data$dist) %>%
-    dplyr::slice(1:n)
+.dmc <- function(color, n, visualize, method) {
+  if (method == "dmc") {
+    check_n(n)
+    check_color(color)
+  } else if (method == "undmc") {
+    check_dmc(color)
+  }
+
+  if (method == "dmc") {
+    color_rgb <- grDevices::col2rgb(color)
+    color_rgb <- c(color_rgb)
+
+    floss_dists <- floss %>%
+      dplyr::mutate(dist = purrr::pmap_dbl(list(.data$red, .data$green, .data$blue), floss_dist, rgb = color_rgb))
+
+    floss_match <- floss_dists %>%
+      dplyr::arrange(.data$dist) %>%
+      dplyr::select(-.data$dist) %>%
+      dplyr::slice(1:n)
+  } else if (method == "undmc") {
+    floss_match <- dplyr::filter(
+      floss,
+      .data$dmc %in% color
+    )
+    color <- floss_match[["hex"]]
+  }
 
   if (visualize) {
-    viz <- dmc_viz(color, closest_floss, n, method = "dmc")
+    viz <- dmc_viz(color, floss_match, n = n, method = method)
   } else {
     viz <- NULL
   }
 
   res <- list(
-    floss = closest_floss,
+    floss = floss_match,
     viz = viz
   )
   class(res) <- "dmc"
 
   print.dmc(res)
-}
-
-floss_dist <- function(red, green, blue, rgb) {
-  floss_rgb <- c(red, green, blue)
-  sum((rgb - floss_rgb)^2)
-}
-
-check_color <- function(color) {
-  if(missing(color)) {
-    stop("`color` is missing, with no default.",
-         call. = FALSE)
-  } else if (!is.vector(color) | length(color) != 1 | !("character" %in% class(color))) {
-    stop("`color` must be a length 1 character vector.",
-      call. = FALSE
-    )
-  } else if (!grepl("^#", color) | nchar(color) != 7) {
-    stop('`color` must be a hex code, e.g. with format "#FFFFFF".',
-      call. = FALSE
-    )
-  }
-}
-
-check_n <- function(n) {
-  if (length(n) != 1) {
-    stop("`n` must be a length 1 positive integer vector.",
-         call. = FALSE
-    )
-  } else if (!is.numeric(n) ||
-             !(n %% 1 == 0) ||
-             n <= 0 ||
-             n == Inf) {
-    stop("`n` must be a positive integer.",
-         call. = FALSE
-    )
-  } else {
-    n
-  }
 }
