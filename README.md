@@ -5,6 +5,10 @@
 
 <!-- badges: start -->
 
+<!-- [![Travis build status](https://travis-ci.org/sharlagelfand/dmc.svg?branch=master)](https://travis-ci.org/sharlagelfand/dmc) -->
+
+<!-- [![Codecov test coverage](https://codecov.io/gh/sharlagelfand/dmc/branch/master/graph/badge.svg)](https://codecov.io/gh/sharlagelfand/dmc?branch=master) -->
+
 <!-- badges: end -->
 
 This package is a work in progress\!

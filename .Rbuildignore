@@ -3,3 +3,5 @@
 ^data-raw$
 ^LICENSE\.md$
 ^README\.Rmd$
+^\.travis\.yml$
+^codecov\.yml$
