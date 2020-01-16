@@ -9,6 +9,9 @@
 #' @examples
 #' dmc("#EE8726")
 dmc <- function(color, n = 1, visualize = TRUE) {
+  check_color(color)
+  check_n(n)
+
   color_rgb <- grDevices::col2rgb(color)
   color_rgb <- c(color_rgb)
 
@@ -26,8 +29,10 @@ dmc <- function(color, n = 1, visualize = TRUE) {
     viz <- NULL
   }
 
-  res <- list(floss = closest_floss,
-              viz = viz)
+  res <- list(
+    floss = closest_floss,
+    viz = viz
+  )
   class(res) <- "dmc"
 
   print.dmc(res)
@@ -36,4 +41,36 @@ dmc <- function(color, n = 1, visualize = TRUE) {
 floss_dist <- function(red, green, blue, rgb) {
   floss_rgb <- c(red, green, blue)
   sum((rgb - floss_rgb)^2)
+}
+
+check_color <- function(color) {
+  if(missing(color)) {
+    stop("`color` is missing, with no default.",
+         call. = FALSE)
+  } else if (!is.vector(color) | length(color) != 1 | !("character" %in% class(color))) {
+    stop("`color` must be a length 1 character vector.",
+      call. = FALSE
+    )
+  } else if (!grepl("^#", color) | nchar(color) != 7) {
+    stop('`color` must be a hex code, e.g. with format "#FFFFFF".',
+      call. = FALSE
+    )
+  }
+}
+
+check_n <- function(n) {
+  if (length(n) != 1) {
+    stop("`n` must be a length 1 positive integer vector.",
+         call. = FALSE
+    )
+  } else if (!is.numeric(n) ||
+             !(n %% 1 == 0) ||
+             n <= 0 ||
+             n == Inf) {
+    stop("`n` must be a positive integer.",
+         call. = FALSE
+    )
+  } else {
+    n
+  }
 }
