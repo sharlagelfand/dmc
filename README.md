@@ -42,9 +42,9 @@ dplyr_background <- "#EE8726"
 
 dmc(dplyr_background)
 #> # A tibble: 1 x 6
-#>   dmc   name          hex       red green  blue
-#>   <chr> <chr>         <chr>   <dbl> <dbl> <dbl>
-#> 1 970   Pumpkin Light #F78B13   247   139    19
+#>   dmc   name            hex       red green  blue
+#>   <chr> <chr>           <chr>   <dbl> <dbl> <dbl>
+#> 1 970   Pumpkin - Light #F78B13   247   139    19
 ```
 
 ![](man/figures/README-dmc-dplyr-1.png)<!-- -->
@@ -54,11 +54,11 @@ I can choose to show more than one matching color:
 ``` r
 dmc(dplyr_background, n = 3)
 #> # A tibble: 3 x 6
-#>   dmc   name             hex       red green  blue
-#>   <chr> <chr>            <chr>   <dbl> <dbl> <dbl>
-#> 1 970   Pumpkin Light    #F78B13   247   139    19
-#> 2 922   Copper Light     #E27323   226   115    35
-#> 3 721   Orange Spice Med #F27842   242   120    66
+#>   dmc   name                  hex       red green  blue
+#>   <chr> <chr>                 <chr>   <dbl> <dbl> <dbl>
+#> 1 970   Pumpkin - Light       #F78B13   247   139    19
+#> 2 922   Copper - Light        #E27323   226   115    35
+#> 3 721   Orange Spice - Medium #F27842   242   120    66
 ```
 
 ![](man/figures/README-dmc-dplyr-3-1.png)<!-- -->
@@ -68,9 +68,9 @@ And to turn off the visualization of the colors:
 ``` r
 dmc(dplyr_background, visualize = FALSE)
 #> # A tibble: 1 x 6
-#>   dmc   name          hex       red green  blue
-#>   <chr> <chr>         <chr>   <dbl> <dbl> <dbl>
-#> 1 970   Pumpkin Light #F78B13   247   139    19
+#>   dmc   name            hex       red green  blue
+#>   <chr> <chr>           <chr>   <dbl> <dbl> <dbl>
+#> 1 970   Pumpkin - Light #F78B13   247   139    19
 ```
 
 If I want to go the *other* way and just find the hex/RGB information
@@ -86,7 +86,7 @@ undmc(310)
 #> # A tibble: 1 x 6
 #>   dmc   name  hex       red green  blue
 #>   <chr> <chr> <chr>   <dbl> <dbl> <dbl>
-#> 1 310   Black #﻿000000     0     0     0
+#> 1 310   Black #000000     0     0     0
 ```
 
 This mostly just takes the DMC floss number, except in cases where there
@@ -97,18 +97,18 @@ A full list of floss colors in the package is available via `floss`:
 ``` r
 floss
 #> # A tibble: 454 x 6
-#>    dmc   name                  hex       red green  blue
-#>    <chr> <chr>                 <chr>   <dbl> <dbl> <dbl>
-#>  1 150   Dusty Rose Ult Vy Dk  #AB0249   171     2    73
-#>  2 151   Dusty Rose Vry Lt     #F0CED4   240   206   212
-#>  3 152   Shell Pink Med Light  #E2A099   226   160   153
-#>  4 153   Violet Very Light     #E6CCD9   230   204   217
-#>  5 154   Grape Very Dark       #572433    87    36    51
-#>  6 155   Blue Violet Med Dark  #9891B6   152   145   182
-#>  7 156   Blue Violet Med Lt    #A3AED1   163   174   209
-#>  8 157   Cornflower Blue Vy Lt #BBC3D9   187   195   217
-#>  9 158   Cornflower Blu M V D  #4C526E    76    82   110
-#> 10 159   Blue Gray Light       #C7CAD7   199   202   215
+#>    dmc   name                hex       red green  blue
+#>    <chr> <chr>               <chr>   <dbl> <dbl> <dbl>
+#>  1 3713  Salmon - Very Light #FFE2E2   255   226   226
+#>  2 761   Salmon - Light      #FFC9C9   255   201   201
+#>  3 760   Salmon              #F5ADAD   245   173   173
+#>  4 3712  Salmon - Medium     #F18787   241   135   135
+#>  5 3328  Salmon - Dark       #E36D6D   227   109   109
+#>  6 347   Salmon - Very Dark  #BF2D2D   191    45    45
+#>  7 353   Peach               #FED7CC   254   215   204
+#>  8 352   Coral - Light       #FD9C97   253   156   151
+#>  9 351   Coral               #E96A67   233   106   103
+#> 10 350   Coral - Medium      #E04848   224    72    72
 #> # … with 444 more rows
 ```
 

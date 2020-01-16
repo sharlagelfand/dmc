@@ -40,7 +40,7 @@ floss_dist <- function(red, green, blue, rgb) {
 
 dmc_viz <- function(color, closest_floss, n) {
   w <- h <- 150
-  font <- 14
+  font <- 12
 
   blank_img <- magick::image_blank(width = (n + 1) * w * 1.1, height = h + 25, color = "white")
 
