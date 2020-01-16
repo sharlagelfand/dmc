@@ -5,13 +5,13 @@
 
 <!-- badges: start -->
 
-<!-- [![Travis build status](https://travis-ci.org/sharlagelfand/dmc.svg?branch=master)](https://travis-ci.org/sharlagelfand/dmc) -->
-
-<!-- [![Codecov test coverage](https://codecov.io/gh/sharlagelfand/dmc/branch/master/graph/badge.svg)](https://codecov.io/gh/sharlagelfand/dmc?branch=master) -->
-
+[![Travis build
+status](https://travis-ci.org/sharlagelfand/dmc.svg?branch=master)](https://travis-ci.org/sharlagelfand/dmc)
+[![Codecov test
+coverage](https://codecov.io/gh/sharlagelfand/dmc/branch/master/graph/badge.svg)](https://codecov.io/gh/sharlagelfand/dmc?branch=master)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 <!-- badges: end -->
-
-This package is a work in progress\!
 
 The goal of dmc is to allow you to find the closest DMC embroidery floss
 color(s) for a given color, as well as access color (hex, RGB)
