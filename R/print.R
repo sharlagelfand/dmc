@@ -22,6 +22,8 @@ print.dmc <- function(x) {
       print(df)
       magick:::`knit_print.magick-image`(img)
     }
-    else invisible(df)
+    else {
+      invisible(df)
+    }
   }
 }

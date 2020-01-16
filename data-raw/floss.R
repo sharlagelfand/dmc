@@ -136,31 +136,35 @@ floss_adrianj <- floss_adrianj %>%
 
 # Some manual cleaning - some are just wrong!
 floss_adrianj <- floss_adrianj %>%
-  mutate(description = case_when(
-    floss_number == "666" ~ "Red - Bright",
-    floss_number == "3846" ~ "Turquoise - Light Bright",
-    floss_number == "3845" ~ "Turquoise - Medium Bright",
-    floss_number == "3844" ~ "Turquoise - Dark Bright",
-    floss_number == "311" ~ "Navy Blue - Medium",
-    floss_number == "943" ~ "Aquamarine - Medium",
-    floss_number == "890" ~ "Pistachio Green - Ultra Dark",
-    floss_number == "934" ~ "Avocado Green - Black",
-    floss_number == "966" ~ "Baby Green - Medium",
-    floss_number == "561" ~ "Jade - Very Dark",
-    floss_number == "608" ~ "Orange - Bright",
-    floss_number == "407" ~ "Desert Sand - Dark",
-    floss_number == "3773" ~ "Desert Sand - Medium",
-    TRUE ~ description),
+  mutate(
+    description = case_when(
+      floss_number == "666" ~ "Red - Bright",
+      floss_number == "3846" ~ "Turquoise - Light Bright",
+      floss_number == "3845" ~ "Turquoise - Medium Bright",
+      floss_number == "3844" ~ "Turquoise - Dark Bright",
+      floss_number == "311" ~ "Navy Blue - Medium",
+      floss_number == "943" ~ "Aquamarine - Medium",
+      floss_number == "890" ~ "Pistachio Green - Ultra Dark",
+      floss_number == "934" ~ "Avocado Green - Black",
+      floss_number == "966" ~ "Baby Green - Medium",
+      floss_number == "561" ~ "Jade - Very Dark",
+      floss_number == "608" ~ "Orange - Bright",
+      floss_number == "407" ~ "Desert Sand - Dark",
+      floss_number == "3773" ~ "Desert Sand - Medium",
+      TRUE ~ description
+    ),
     description = str_replace(description, "Blue Gray", "Gray Blue"),
     description = str_replace_all(description, "Sea Green", "Seagreen")
   )
 
 floss <- floss_adrianj %>%
-  select(dmc = floss_number,
-         name = description,
-         hex = rgb_code,
-         red,
-         green,
-         blue)
+  select(
+    dmc = floss_number,
+    name = description,
+    hex = rgb_code,
+    red,
+    green,
+    blue
+  )
 
 usethis::use_data(floss, overwrite = TRUE)

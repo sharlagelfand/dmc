@@ -40,7 +40,7 @@ undmc <- function(dmc, visualize = TRUE) {
     color_rgb <- grDevices::col2rgb(color)
     color_rgb <- c(color_rgb)
 
-    floss_dists <- floss %>%
+    floss_dists <- dmc::floss %>%
       dplyr::mutate(dist = purrr::pmap_dbl(list(.data$red, .data$green, .data$blue), floss_dist, rgb = color_rgb))
 
     floss_match <- floss_dists %>%
@@ -48,10 +48,10 @@ undmc <- function(dmc, visualize = TRUE) {
       dplyr::select(-.data$dist) %>%
       dplyr::slice(1:n)
   } else if (method == "undmc") {
-    floss_match <- dplyr::filter(
-      floss,
-      .data$dmc %in% color
-    )
+    floss_match <- dmc::floss %>%
+      dplyr::filter(
+        .data$dmc %in% color
+      )
     color <- floss_match[["hex"]]
   }
 
