@@ -31,8 +31,6 @@ check_n <- function(n) {
     stop("`n` must be a positive integer.",
       call. = FALSE
     )
-  } else {
-    n
   }
 }
 
