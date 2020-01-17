@@ -8,7 +8,7 @@ check_color <- function(color) {
     stop("`color` is missing, with no default.",
       call. = FALSE
     )
-  } else if (!is.vector(color) | length(color) != 1 | !("character" %in% class(color))) {
+  } else if (!is.vector(color) | length(color) != 1 | !inherits(color, "character")) {
     stop("`color` must be a length 1 character vector.",
       call. = FALSE
     )
