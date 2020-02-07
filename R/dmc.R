@@ -37,7 +37,7 @@ undmc <- function(dmc, visualize = TRUE) {
   }
 
   if (method == "dmc") {
-    color_rgb <- grDevices::col2rgb(color)
+    color_rgb <- farver::decode_colour(color)
     color_rgb <- c(color_rgb)
 
     floss_dists <- dmc::floss %>%

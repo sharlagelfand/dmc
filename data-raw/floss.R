@@ -52,7 +52,7 @@ wrong_rgb_to_hex_fixed <- wrong_rgb_to_hex %>%
       floss_number == "890" ~ "#174923",
       floss_number == "3830" ~ "#B95544"
     ),
-    rgb = map(correct_hex, ~ c(col2rgb(.x))),
+    rgb = map(correct_hex, ~ c(farver::decode_colour(.x))),
     red_new = map_dbl(rgb, 1),
     green_new = map_dbl(rgb, 2),
     blue_new = map_dbl(rgb, 3)
