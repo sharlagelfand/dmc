@@ -5,7 +5,7 @@
 \title{Find the closest DMC embroidery floss for a given colour}
 \usage{
 dmc(colour, n = 1, visualize = TRUE, method = c("euclidean",
-  "cie94"))
+  "cie1976", "cie94", "cie2000", "cmc"))
 }
 \arguments{
 \item{colour}{A hex code to identify the colour, e.g. "#EE8726"}
@@ -21,4 +21,7 @@ Find the closest DMC embroidery floss for a given colour
 }
 \examples{
 dmc("#EE8726")
+dmc("#EE8726", n = 5)
+dmc("#EE8726", n = 5, method = "cie94")
+dmc("#EE8726", visualize = FALSE)
 }
