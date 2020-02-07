@@ -63,6 +63,12 @@ And to turn off the visualization of the colours:
 dmc(dplyr_background, visualize = FALSE)
 ```
 
+By default, `dmc()` uses Euclidean distance to find the closest floss colour. The method can be changed to be one of "euclidean", "cie1976", "cie94", "cie2000", or "cmc". For example:
+
+```{r dmc-dplyr-cie94}
+dmc(dplyr_background, n = 3, method = "cie94")
+```
+
 If I want to go the *other* way and just find the hex/RGB information for a given DMC floss, I can use `undmc()`. By default, this visualizes the DMC floss:
 
 ```{r undmc}

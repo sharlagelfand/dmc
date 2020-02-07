@@ -77,6 +77,22 @@ dmc(dplyr_background, visualize = FALSE)
 #> 1 970   Pumpkin - Light #F78B13   247   139    19
 ```
 
+By default, `dmc()` uses Euclidean distance to find the closest floss
+colour. The method can be changed to be one of “euclidean”, “cie1976”,
+“cie94”, “cie2000”, or “cmc”. For example:
+
+``` r
+dmc(dplyr_background, n = 3, method = "cie94")
+#> # A tibble: 3 x 6
+#>   dmc   name            hex       red green  blue
+#>   <chr> <chr>           <chr>   <dbl> <dbl> <dbl>
+#> 1 971   Pumpkin         #F67F00   246   127     0
+#> 2 970   Pumpkin - Light #F78B13   247   139    19
+#> 3 740   Tangerine       #FF8B00   255   139     0
+```
+
+![](man/figures/README-dmc-dplyr-cie94-1.png)<!-- -->
+
 If I want to go the *other* way and just find the hex/RGB information
 for a given DMC floss, I can use `undmc()`. By default, this visualizes
 the DMC floss:

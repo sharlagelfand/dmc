@@ -9,7 +9,10 @@
 #'
 #' @examples
 #' dmc("#EE8726")
-dmc <- function(colour, n = 1, visualize = TRUE, method = c("euclidean", "cie94")) {
+#' dmc("#EE8726", n = 5)
+#' dmc("#EE8726", n = 5, method = "cie94")
+#' dmc("#EE8726", visualize = FALSE)
+dmc <- function(colour, n = 1, visualize = TRUE, method = c("euclidean", "cie1976", "cie94", "cie2000", "cmc")) {
   method <- match.arg(method)
   .dmc(colour = colour, n = n, visualize = visualize, dmc_method = "dmc", method = method)
 }
