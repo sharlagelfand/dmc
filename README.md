@@ -17,6 +17,11 @@ The goal of dmc is to allow you to find the closest DMC embroidery floss
 colour(s) for a given colour, as well as access colour (hex, RGB)
 information about DMC colours.
 
+If you’d like to use dmc without having to install the package (or R\!),
+there is a [Shiny app](https://sharlagelfand.shinyapps.io/dmcapp/) as
+well (in its own package,
+[dmcapp](https://github.com/sharlagelfand/dmcapp)).
+
 ## Installation
 
 You can install the development version of dmc from github with:
