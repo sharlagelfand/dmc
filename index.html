@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Convert Color to DMC Embroidery Floss and Back • dmc</title>
+<title>Convert Colour to DMC Embroidery Floss and Back • dmc</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Convert Color to DMC Embroidery Floss and Back">
-<meta property="og:description" content="Finds the closest DMC embroidery floss for colors.">
+<script src="pkgdown.js"></script><meta property="og:title" content="Convert Colour to DMC Embroidery Floss and Back">
+<meta property="og:description" content="Finds the closest DMC embroidery floss for colours.">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -64,7 +64,7 @@
 <a href="#dmc" class="anchor"></a>dmc</h1></div>
 <!-- badges: start -->
 
-<p>The goal of dmc is to allow you to find the closest DMC embroidery floss color(s) for a given color, as well as access color (hex, RGB) information about DMC colors.</p>
+<p>The goal of dmc is to allow you to find the closest DMC embroidery floss colour(s) for a given colour, as well as access colour (hex, RGB) information about DMC colours.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -75,9 +75,9 @@
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
-<p>Say I’m interested in finding the closest DMC floss color for the background color of the <a href="https://github.com/tidyverse/dplyr/blob/master/man/figures/logo.png"><code>dplyr</code> package’s hex logo</a> 😈.</p>
-<p>I can look up the hex code for this color via a site like <a href="https://html-color-codes.info/colors-from-image/">HTML Color Codes</a>. The hex code is “#EE8726”.</p>
-<p>Then, I can use <code><a href="reference/dmc.html">dmc()</a></code> to find the closest DMC floss for this color:</p>
+<p>Say I’m interested in finding the closest DMC floss colour for the background colour of the <a href="https://github.com/tidyverse/dplyr/blob/master/man/figures/logo.png"><code>dplyr</code> package’s hex logo</a> 😈.</p>
+<p>I can look up the hex code for this colour via a site like <a href="https://html-colour-codes.info/colours-from-image/">HTML Color Codes</a>. The hex code is “#EE8726”.</p>
+<p>Then, I can use <code><a href="reference/dmc.html">dmc()</a></code> to find the closest DMC floss for this colour:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(dmc)</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb2-3" data-line-number="3">dplyr_background &lt;-<span class="st"> "#EE8726"</span></a>
@@ -88,7 +88,7 @@
 <a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt;           &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
 <a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt; 1 970   Pumpkin - Light #F78B13   247   139    19</span></a></code></pre></div>
 <p><img src="reference/figures/README-dmc-dplyr-1.png"><!-- --></p>
-<p>I can choose to show more than one matching color:</p>
+<p>I can choose to show more than one matching colour:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="reference/dmc.html">dmc</a></span>(dplyr_background, <span class="dt">n =</span> <span class="dv">3</span>)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co">#&gt; # A tibble: 3 x 6</span></a>
 <a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt;   dmc   name                  hex       red green  blue</span></a>
@@ -97,42 +97,51 @@
 <a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt; 2 922   Copper - Light        #E27323   226   115    35</span></a>
 <a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt; 3 721   Orange Spice - Medium #F27842   242   120    66</span></a></code></pre></div>
 <p><img src="reference/figures/README-dmc-dplyr-3-1.png"><!-- --></p>
-<p>And to turn off the visualization of the colors:</p>
+<p>And to turn off the visualization of the colours:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="reference/dmc.html">dmc</a></span>(dplyr_background, <span class="dt">visualize =</span> <span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; # A tibble: 1 x 6</span></a>
 <a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt;   dmc   name            hex       red green  blue</span></a>
 <a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt;           &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
 <a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; 1 970   Pumpkin - Light #F78B13   247   139    19</span></a></code></pre></div>
+<p>By default, <code><a href="reference/dmc.html">dmc()</a></code> uses Euclidean distance to find the closest floss colour. The method can be changed to be one of “euclidean”, “cie1976”, “cie94”, “cie2000”, or “cmc”. For example:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="reference/dmc.html">dmc</a></span>(dplyr_background, <span class="dt">n =</span> <span class="dv">3</span>, <span class="dt">method =</span> <span class="st">"cie94"</span>)</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="co">#&gt; # A tibble: 3 x 6</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co">#&gt;   dmc   name            hex       red green  blue</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt;           &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt; 1 971   Pumpkin         #F67F00   246   127     0</span></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt; 2 970   Pumpkin - Light #F78B13   247   139    19</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; 3 740   Tangerine       #FF8B00   255   139     0</span></a></code></pre></div>
+<p><img src="reference/figures/README-dmc-dplyr-cie94-1.png"><!-- --></p>
 <p>If I want to go the <em>other</em> way and just find the hex/RGB information for a given DMC floss, I can use <code><a href="reference/undmc.html">undmc()</a></code>. By default, this visualizes the DMC floss:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="reference/undmc.html">undmc</a></span>(<span class="st">"Ecru"</span>)</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="co">#&gt; # A tibble: 1 x 6</span></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co">#&gt;   dmc   name  hex       red green  blue</span></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt; 1 Ecru  Ecru  #F0EADA   240   234   218</span></a></code></pre></div>
-<p><img src="reference/figures/README-undmc-1.png"><!-- --></p>
-<p>Again, the visualization can be turned off:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="reference/undmc.html">undmc</a></span>(<span class="dv">310</span>, <span class="dt">visualize =</span> <span class="ot">FALSE</span>)</a>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="reference/undmc.html">undmc</a></span>(<span class="st">"Ecru"</span>)</a>
 <a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co">#&gt; # A tibble: 1 x 6</span></a>
 <a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co">#&gt;   dmc   name  hex       red green  blue</span></a>
 <a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co">#&gt; 1 310   Black #000000     0     0     0</span></a></code></pre></div>
+<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co">#&gt; 1 Ecru  Ecru  #F0EADA   240   234   218</span></a></code></pre></div>
+<p><img src="reference/figures/README-undmc-1.png"><!-- --></p>
+<p>Again, the visualization can be turned off:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="reference/undmc.html">undmc</a></span>(<span class="dv">310</span>, <span class="dt">visualize =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="co">#&gt; # A tibble: 1 x 6</span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co">#&gt;   dmc   name  hex       red green  blue</span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="co">#&gt; 1 310   Black #000000     0     0     0</span></a></code></pre></div>
 <p><code><a href="reference/undmc.html">undmc()</a></code> mostly just takes the DMC floss number, except in cases where there isn’t one (e.g., Ecru).</p>
-<p>A full list of floss colors in the package is available via <code>floss</code>:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">floss</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="co">#&gt; # A tibble: 454 x 6</span></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co">#&gt;    dmc   name                hex       red green  blue</span></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="co">#&gt;    &lt;chr&gt; &lt;chr&gt;               &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="co">#&gt;  1 3713  Salmon - Very Light #FFE2E2   255   226   226</span></a>
-<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="co">#&gt;  2 761   Salmon - Light      #FFC9C9   255   201   201</span></a>
-<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="co">#&gt;  3 760   Salmon              #F5ADAD   245   173   173</span></a>
-<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="co">#&gt;  4 3712  Salmon - Medium     #F18787   241   135   135</span></a>
-<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="co">#&gt;  5 3328  Salmon - Dark       #E36D6D   227   109   109</span></a>
-<a class="sourceLine" id="cb7-10" data-line-number="10"><span class="co">#&gt;  6 347   Salmon - Very Dark  #BF2D2D   191    45    45</span></a>
-<a class="sourceLine" id="cb7-11" data-line-number="11"><span class="co">#&gt;  7 353   Peach               #FED7CC   254   215   204</span></a>
-<a class="sourceLine" id="cb7-12" data-line-number="12"><span class="co">#&gt;  8 352   Coral - Light       #FD9C97   253   156   151</span></a>
-<a class="sourceLine" id="cb7-13" data-line-number="13"><span class="co">#&gt;  9 351   Coral               #E96A67   233   106   103</span></a>
-<a class="sourceLine" id="cb7-14" data-line-number="14"><span class="co">#&gt; 10 350   Coral - Medium      #E04848   224    72    72</span></a>
-<a class="sourceLine" id="cb7-15" data-line-number="15"><span class="co">#&gt; # … with 444 more rows</span></a></code></pre></div>
+<p>A full list of floss colours in the package is available via <code>floss</code>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">floss</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co">#&gt; # A tibble: 454 x 6</span></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#&gt;    dmc   name                hex       red green  blue</span></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="co">#&gt;    &lt;chr&gt; &lt;chr&gt;               &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co">#&gt;  1 3713  Salmon - Very Light #FFE2E2   255   226   226</span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="co">#&gt;  2 761   Salmon - Light      #FFC9C9   255   201   201</span></a>
+<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="co">#&gt;  3 760   Salmon              #F5ADAD   245   173   173</span></a>
+<a class="sourceLine" id="cb8-8" data-line-number="8"><span class="co">#&gt;  4 3712  Salmon - Medium     #F18787   241   135   135</span></a>
+<a class="sourceLine" id="cb8-9" data-line-number="9"><span class="co">#&gt;  5 3328  Salmon - Dark       #E36D6D   227   109   109</span></a>
+<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="co">#&gt;  6 347   Salmon - Very Dark  #BF2D2D   191    45    45</span></a>
+<a class="sourceLine" id="cb8-11" data-line-number="11"><span class="co">#&gt;  7 353   Peach               #FED7CC   254   215   204</span></a>
+<a class="sourceLine" id="cb8-12" data-line-number="12"><span class="co">#&gt;  8 352   Coral - Light       #FD9C97   253   156   151</span></a>
+<a class="sourceLine" id="cb8-13" data-line-number="13"><span class="co">#&gt;  9 351   Coral               #E96A67   233   106   103</span></a>
+<a class="sourceLine" id="cb8-14" data-line-number="14"><span class="co">#&gt; 10 350   Coral - Medium      #E04848   224    72    72</span></a>
+<a class="sourceLine" id="cb8-15" data-line-number="15"><span class="co">#&gt; # … with 444 more rows</span></a></code></pre></div>
 <p>where the values in <code>floss[["dmc"]]</code> are all that can be passed to <code><a href="reference/undmc.html">undmc()</a></code>.</p>
 </div>
 </div>

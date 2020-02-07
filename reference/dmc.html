@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Find the closest DMC embroidery floss for a given color — dmc • dmc</title>
+<title>Find the closest DMC embroidery floss for a given colour — dmc • dmc</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="Find the closest DMC embroidery floss for a given color — dmc" />
-<meta property="og:description" content="Find the closest DMC embroidery floss for a given color" />
+<meta property="og:title" content="Find the closest DMC embroidery floss for a given colour — dmc" />
+<meta property="og:description" content="Find the closest DMC embroidery floss for a given colour" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -100,37 +100,59 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Find the closest DMC embroidery floss for a given color</h1>
+    <h1>Find the closest DMC embroidery floss for a given colour</h1>
     
     <div class="hidden name"><code>dmc.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Find the closest DMC embroidery floss for a given color</p>
+    <p>Find the closest DMC embroidery floss for a given colour</p>
     </div>
 
-    <pre class="usage"><span class='fu'>dmc</span>(<span class='no'>color</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>visualize</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>dmc</span>(<span class='no'>colour</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>visualize</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"euclidean"</span>,
+  <span class='st'>"cie1976"</span>, <span class='st'>"cie94"</span>, <span class='st'>"cie2000"</span>, <span class='st'>"cmc"</span>))</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>color</th>
-      <td><p>A hex code to identify the color, e.g. "#EE8726"</p></td>
+      <th>colour</th>
+      <td><p>A hex code to identify the colour, e.g. "#EE8726"</p></td>
     </tr>
     <tr>
       <th>n</th>
-      <td><p>Number of DMC floss colors to return. Defaults to 1.</p></td>
+      <td><p>Number of DMC floss colours to return. Defaults to 1.</p></td>
     </tr>
     <tr>
       <th>visualize</th>
-      <td><p>Whether to visualize <code>color</code> versus the closest DMC floss color(s). Defaults to TRUE.</p></td>
+      <td><p>Whether to visualize <code>colour</code> versus the closest DMC floss colour(s). Defaults to TRUE.</p></td>
+    </tr>
+    <tr>
+      <th>method</th>
+      <td><p>Method for comparing colours. Defaults to "euclidean".</p></td>
     </tr>
     </table>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>dmc</span>(<span class='st'>"#EE8726"</span>)</div><div class='output co'>#&gt; # A tibble: 1 x 6
+#&gt;   dmc   name            hex       red green  blue
+#&gt;   &lt;chr&gt; &lt;chr&gt;           &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+#&gt; 1 970   Pumpkin - Light #F78B13   247   139    19</div><div class='input'><span class='fu'>dmc</span>(<span class='st'>"#EE8726"</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>5</span>)</div><div class='output co'>#&gt; # A tibble: 5 x 6
+#&gt;   dmc   name                  hex       red green  blue
+#&gt;   &lt;chr&gt; &lt;chr&gt;                 &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+#&gt; 1 970   Pumpkin - Light       #F78B13   247   139    19
+#&gt; 2 922   Copper - Light        #E27323   226   115    35
+#&gt; 3 721   Orange Spice - Medium #F27842   242   120    66
+#&gt; 4 741   Tangerine - Medium    #FFA32B   255   163    43
+#&gt; 5 783   Topaz - Medium        #CE9124   206   145    36</div><div class='input'><span class='fu'>dmc</span>(<span class='st'>"#EE8726"</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"cie94"</span>)</div><div class='output co'>#&gt; # A tibble: 5 x 6
+#&gt;   dmc   name               hex       red green  blue
+#&gt;   &lt;chr&gt; &lt;chr&gt;              &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+#&gt; 1 971   Pumpkin            #F67F00   246   127     0
+#&gt; 2 970   Pumpkin - Light    #F78B13   247   139    19
+#&gt; 3 740   Tangerine          #FF8B00   255   139     0
+#&gt; 4 3853  Autumn Gold - Dark #F29746   242   151    70
+#&gt; 5 922   Copper - Light     #E27323   226   115    35</div><div class='input'><span class='fu'>dmc</span>(<span class='st'>"#EE8726"</span>, <span class='kw'>visualize</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; # A tibble: 1 x 6
 #&gt;   dmc   name            hex       red green  blue
 #&gt;   &lt;chr&gt; &lt;chr&gt;           &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
 #&gt; 1 970   Pumpkin - Light #F78B13   247   139    19</div></pre>
