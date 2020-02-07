@@ -4,7 +4,7 @@
 \alias{dmc}
 \title{Find the closest DMC embroidery floss for a given color}
 \usage{
-dmc(color, n = 1, visualize = TRUE)
+dmc(color, n = 1, visualize = TRUE, method = c("euclidean", "cie94"))
 }
 \arguments{
 \item{color}{A hex code to identify the color, e.g. "#EE8726"}
@@ -12,6 +12,8 @@ dmc(color, n = 1, visualize = TRUE)
 \item{n}{Number of DMC floss colors to return. Defaults to 1.}
 
 \item{visualize}{Whether to visualize \code{color} versus the closest DMC floss color(s). Defaults to TRUE.}
+
+\item{method}{Method for comparing colors. Defaults to "euclidean".}
 }
 \description{
 Find the closest DMC embroidery floss for a given color

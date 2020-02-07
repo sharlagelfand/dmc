@@ -1,8 +1,3 @@
-floss_dist <- function(red, green, blue, rgb) {
-  floss_rgb <- c(red, green, blue)
-  sum((rgb - floss_rgb)^2)
-}
-
 check_color <- function(color) {
   if (missing(color)) {
     stop("`color` is missing, with no default.",

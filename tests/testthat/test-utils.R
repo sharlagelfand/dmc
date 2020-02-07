@@ -1,12 +1,3 @@
-test_that("floss_dist computes squared euclidean distance.", {
-  red <- 1
-  green <- 2
-  blue <- 3
-  rgb <- c(10, 20, 30)
-  output <- (rgb[[1]] - red)^2 + (rgb[[2]] - green)^2 + (rgb[[3]] - blue)^2
-  expect_equal(floss_dist(red, green, blue, rgb), output)
-})
-
 test_that("check_n throws error if n is not a length 1 positive integer", {
   expect_error(check_n(0), "positive integer")
   expect_error(check_n(c(1, 2)), "length 1")
