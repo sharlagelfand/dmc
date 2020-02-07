@@ -2,21 +2,22 @@
 % Please edit documentation in R/dmc.R
 \name{dmc}
 \alias{dmc}
-\title{Find the closest DMC embroidery floss for a given color}
+\title{Find the closest DMC embroidery floss for a given colour}
 \usage{
-dmc(color, n = 1, visualize = TRUE, method = c("euclidean", "cie94"))
+dmc(colour, n = 1, visualize = TRUE, method = c("euclidean",
+  "cie94"))
 }
 \arguments{
-\item{color}{A hex code to identify the color, e.g. "#EE8726"}
+\item{colour}{A hex code to identify the colour, e.g. "#EE8726"}
 
-\item{n}{Number of DMC floss colors to return. Defaults to 1.}
+\item{n}{Number of DMC floss colours to return. Defaults to 1.}
 
-\item{visualize}{Whether to visualize \code{color} versus the closest DMC floss color(s). Defaults to TRUE.}
+\item{visualize}{Whether to visualize \code{colour} versus the closest DMC floss colour(s). Defaults to TRUE.}
 
-\item{method}{Method for comparing colors. Defaults to "euclidean".}
+\item{method}{Method for comparing colours. Defaults to "euclidean".}
 }
 \description{
-Find the closest DMC embroidery floss for a given color
+Find the closest DMC embroidery floss for a given colour
 }
 \examples{
 dmc("#EE8726")

@@ -1,4 +1,4 @@
-# Creating data set of floss colors
+# Creating data set of floss colours
 
 library(dplyr)
 library(stringr)
@@ -103,7 +103,7 @@ sep_description <- function(x, description) {
   str_replace(x, description, paste("-", description))
 }
 
-separate_color_description <- function(name) {
+separate_colour_description <- function(name) {
   case_when(
     str_detect(name, "Ultra Very Light") ~ sep_description(name, "Ultra Very Light"),
     str_detect(name, "Ultra Very Dark") ~ sep_description(name, "Ultra Very Dark"),
@@ -131,7 +131,7 @@ floss_adrianj <- floss_adrianj %>%
   mutate(
     description = str_squish(description),
     description = clean_floss_name(description),
-    description = separate_color_description(description)
+    description = separate_colour_description(description)
   )
 
 # Some manual cleaning - some are just wrong!

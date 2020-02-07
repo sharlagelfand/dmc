@@ -3,12 +3,12 @@
 \docType{data}
 \name{floss}
 \alias{floss}
-\title{DMC Embroidery Floss Colors}
+\title{DMC Embroidery Floss Colours}
 \format{An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 454 rows and 6 columns.}
 \usage{
 floss
 }
 \description{
-A dataset containing DMC embroidery floss colors along with their name, color hex code, and RGB values.
+A dataset containing DMC embroidery floss colours along with their name, colour hex code, and RGB values.
 }
 \keyword{datasets}

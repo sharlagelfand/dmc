@@ -14,8 +14,8 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 <!-- badges: end -->
 
 The goal of dmc is to allow you to find the closest DMC embroidery floss
-color(s) for a given color, as well as access color (hex, RGB)
-information about DMC colors.
+colour(s) for a given colour, as well as access colour (hex, RGB)
+information about DMC colours.
 
 ## Installation
 
@@ -28,16 +28,16 @@ devtools::install_github("sharlagelfand/dmc")
 
 ## Example
 
-Say I’m interested in finding the closest DMC floss color for the
-background color of the [`dplyr` package’s hex
+Say I’m interested in finding the closest DMC floss colour for the
+background colour of the [`dplyr` package’s hex
 logo](https://github.com/tidyverse/dplyr/blob/master/man/figures/logo.png)
 😈.
 
-I can look up the hex code for this color via a site like [HTML Color
-Codes](https://html-color-codes.info/colors-from-image/). The hex code
+I can look up the hex code for this colour via a site like [HTML Color
+Codes](https://html-colour-codes.info/colours-from-image/). The hex code
 is “\#EE8726”.
 
-Then, I can use `dmc()` to find the closest DMC floss for this color:
+Then, I can use `dmc()` to find the closest DMC floss for this colour:
 
 ``` r
 library(dmc)
@@ -53,7 +53,7 @@ dmc(dplyr_background)
 
 ![](man/figures/README-dmc-dplyr-1.png)<!-- -->
 
-I can choose to show more than one matching color:
+I can choose to show more than one matching colour:
 
 ``` r
 dmc(dplyr_background, n = 3)
@@ -67,7 +67,7 @@ dmc(dplyr_background, n = 3)
 
 ![](man/figures/README-dmc-dplyr-3-1.png)<!-- -->
 
-And to turn off the visualization of the colors:
+And to turn off the visualization of the colours:
 
 ``` r
 dmc(dplyr_background, visualize = FALSE)
@@ -104,7 +104,7 @@ undmc(310, visualize = FALSE)
 `undmc()` mostly just takes the DMC floss number, except in cases where
 there isn’t one (e.g., Ecru).
 
-A full list of floss colors in the package is available via `floss`:
+A full list of floss colours in the package is available via `floss`:
 
 ``` r
 floss

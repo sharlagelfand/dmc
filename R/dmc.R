@@ -1,24 +1,24 @@
-#' Find the closest DMC embroidery floss for a given color
+#' Find the closest DMC embroidery floss for a given colour
 #'
-#' @param color A hex code to identify the color, e.g. "#EE8726"
-#' @param n Number of DMC floss colors to return. Defaults to 1.
-#' @param visualize Whether to visualize \code{color} versus the closest DMC floss color(s). Defaults to TRUE.
-#' @param method Method for comparing colors. Defaults to "euclidean".
+#' @param colour A hex code to identify the colour, e.g. "#EE8726"
+#' @param n Number of DMC floss colours to return. Defaults to 1.
+#' @param visualize Whether to visualize \code{colour} versus the closest DMC floss colour(s). Defaults to TRUE.
+#' @param method Method for comparing colours. Defaults to "euclidean".
 #'
 #' @export
 #'
 #' @examples
 #' dmc("#EE8726")
-dmc <- function(color, n = 1, visualize = TRUE, method = c("euclidean", "cie94")) {
+dmc <- function(colour, n = 1, visualize = TRUE, method = c("euclidean", "cie94")) {
   method <- match.arg(method)
-  .dmc(color = color, n = n, visualize = visualize, dmc_method = "dmc", method = method)
+  .dmc(colour = colour, n = n, visualize = visualize, dmc_method = "dmc", method = method)
 }
 
 
 #' Return the hex code and RGB values of a given DMC embroidery floss
 #'
 #' @param dmc DMC floss identifier. Usually the floss number (e.g. 210), or the name if it does not commonly have a number (e.g. "Ecru").
-#' @param visualize Whether to visualize the DMC floss color. Defaults to TRUE.
+#' @param visualize Whether to visualize the DMC floss colour. Defaults to TRUE.
 #'
 #' @export
 #'
@@ -27,29 +27,29 @@ dmc <- function(color, n = 1, visualize = TRUE, method = c("euclidean", "cie94")
 #' undmc(310)
 #' undmc(c(210, 211))
 undmc <- function(dmc, visualize = TRUE) {
-  .dmc(color = dmc, n = 0, visualize = visualize, dmc_method = "undmc")
+  .dmc(colour = dmc, n = 0, visualize = visualize, dmc_method = "undmc")
 }
 
-.dmc <- function(color, n, visualize, dmc_method, method = NULL) {
+.dmc <- function(colour, n, visualize, dmc_method, method = NULL) {
   if (dmc_method == "dmc") {
     check_n(n)
-    check_color(color)
+    check_colour(colour)
   } else if (dmc_method == "undmc") {
-    check_dmc(color)
+    check_dmc(colour)
   }
 
   if (dmc_method == "dmc") {
-    color_rgb <- farver::decode_colour(color)
+    colour_rgb <- farver::decode_colour(colour)
 
     floss_dists <- dmc::floss %>%
       dplyr::mutate(
         rgb = purrr::pmap(list(.data$red, .data$green, .data$blue), c),
-        dist = purrr::map_dbl(rgb, function(x) {
+        dist = purrr::map_dbl(.data$rgb, function(x) {
           colour_matrix <- matrix(x, ncol = 3)
-          farver::compare_colour(from = colour_matrix, to = color_rgb, from_space = "rgb", method = method)
+          farver::compare_colour(from = colour_matrix, to = colour_rgb, from_space = "rgb", method = method)
         })
       ) %>%
-      dplyr::select(-rgb)
+      dplyr::select(-.data$rgb)
 
     floss_match <- floss_dists %>%
       dplyr::arrange(.data$dist) %>%
@@ -58,13 +58,13 @@ undmc <- function(dmc, visualize = TRUE) {
   } else if (dmc_method == "undmc") {
     floss_match <- dmc::floss %>%
       dplyr::filter(
-        .data$dmc %in% color
+        .data$dmc %in% colour
       )
-    color <- floss_match[["hex"]]
+    colour <- floss_match[["hex"]]
   }
 
   if (visualize) {
-    viz <- dmc_viz(color, floss_match, n = n, dmc_method = dmc_method)
+    viz <- dmc_viz(colour, floss_match, n = n, dmc_method = dmc_method)
   } else {
     viz <- NULL
   }
@@ -80,20 +80,20 @@ wrap_name <- function(x) {
   }
 }
 
-dmc_viz <- function(color, closest_floss, n, dmc_method = c("dmc", "undmc")) {
+dmc_viz <- function(colour, closest_floss, n, dmc_method = c("dmc", "undmc")) {
   w <- h <- 150
   font <- 14
 
   blank_img <- magick::image_blank(width = (n + 1) * w * 1.1, height = h + 50, color = "white")
 
   if (dmc_method == "dmc") {
-    color_img <- magick::image_blank(width = w, height = h, color = color)
-    color_img <- magick::image_border(color_img, color = "black", geometry = "1x1")
+    colour_img <- magick::image_blank(width = w, height = h, color = colour)
+    colour_img <- magick::image_border(colour_img, color = "black", geometry = "1x1")
 
-    colors <- magick::image_composite(blank_img, color_img)
-    colors <- magick::image_annotate(colors, color, size = font, color = "black", location = paste0("+0+", h * 1.05))
+    colours <- magick::image_composite(blank_img, colour_img)
+    colours <- magick::image_annotate(colours, colour, size = font, color = "black", location = paste0("+0+", h * 1.05))
   } else if (dmc_method == "undmc") {
-    colors <- blank_img
+    colours <- blank_img
   }
 
   closest_floss_img <- closest_floss %>%
@@ -102,9 +102,9 @@ dmc_viz <- function(color, closest_floss, n, dmc_method = c("dmc", "undmc")) {
   for (i in 1:nrow(closest_floss_img)) {
     floss_i <- closest_floss_img[i, ]
 
-    colors <- magick::image_composite(colors, floss_i[["img"]][[1]], offset = paste0("+", ifelse(dmc_method == "dmc", 1.1 * w * i, 0), "+0"))
-    colors <- magick::image_annotate(colors, wrap_name(paste0(floss_i[["dmc"]], " (", floss_i[["name"]], ")")), size = font, color = "black", location = paste0("+", ifelse(dmc_method == "dmc", 1.1 * w * i, 0), "+", h * 1.05))
+    colours <- magick::image_composite(colours, floss_i[["img"]][[1]], offset = paste0("+", ifelse(dmc_method == "dmc", 1.1 * w * i, 0), "+0"))
+    colours <- magick::image_annotate(colours, wrap_name(paste0(floss_i[["dmc"]], " (", floss_i[["name"]], ")")), size = font, color = "black", location = paste0("+", ifelse(dmc_method == "dmc", 1.1 * w * i, 0), "+", h * 1.05))
   }
 
-  colors
+  colours
 }

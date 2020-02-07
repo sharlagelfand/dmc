@@ -1,4 +1,4 @@
-#' DMC Embroidery Floss Colors
+#' DMC Embroidery Floss Colours
 #'
-#' A dataset containing DMC embroidery floss colors along with their name, color hex code, and RGB values.
+#' A dataset containing DMC embroidery floss colours along with their name, colour hex code, and RGB values.
 "floss"

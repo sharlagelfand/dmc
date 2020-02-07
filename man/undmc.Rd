@@ -9,7 +9,7 @@ undmc(dmc, visualize = TRUE)
 \arguments{
 \item{dmc}{DMC floss identifier. Usually the floss number (e.g. 210), or the name if it does not commonly have a number (e.g. "Ecru").}
 
-\item{visualize}{Whether to visualize the DMC floss color. Defaults to TRUE.}
+\item{visualize}{Whether to visualize the DMC floss colour. Defaults to TRUE.}
 }
 \description{
 Return the hex code and RGB values of a given DMC embroidery floss
