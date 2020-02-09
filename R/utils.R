@@ -30,7 +30,7 @@ check_n <- function(n) {
 }
 
 check_dmc <- function(dmc) {
-  if (!(dmc %in% dmc::floss[["dmc"]])) {
+  if (!all(dmc %in% dmc::floss[["dmc"]])) {
     stop('`dmc` is not a valid DMC floss identifier.\nSee floss[["dmc"]] for the full list of DMC colours.',
       call. = FALSE
     )

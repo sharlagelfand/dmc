@@ -30,7 +30,7 @@ dmc <- function(colour, n = 1, visualize = TRUE, method = c("euclidean", "cie197
 #' undmc(310)
 #' undmc(c(210, 211))
 undmc <- function(dmc, visualize = TRUE) {
-  .dmc(colour = dmc, n = 0, visualize = visualize, dmc_method = "undmc")
+  .dmc(colour = dmc, n = length(dmc) - 1, visualize = visualize, dmc_method = "undmc")
 }
 
 .dmc <- function(colour, n, visualize, dmc_method, method = NULL) {
@@ -105,8 +105,8 @@ dmc_viz <- function(colour, closest_floss, n, dmc_method = c("dmc", "undmc")) {
   for (i in 1:nrow(closest_floss_img)) {
     floss_i <- closest_floss_img[i, ]
 
-    colours <- magick::image_composite(colours, floss_i[["img"]][[1]], offset = paste0("+", ifelse(dmc_method == "dmc", 1.1 * w * i, 0), "+0"))
-    colours <- magick::image_annotate(colours, wrap_name(paste0(floss_i[["dmc"]], " (", floss_i[["name"]], ")")), size = font, color = "black", location = paste0("+", ifelse(dmc_method == "dmc", 1.1 * w * i, 0), "+", h * 1.05))
+    colours <- magick::image_composite(colours, floss_i[["img"]][[1]], offset = paste0("+", ifelse(dmc_method == "dmc", 1.1 * w * i, 1.1 * w * (i - 1)), "+0"))
+    colours <- magick::image_annotate(colours, wrap_name(paste0(floss_i[["dmc"]], " (", floss_i[["name"]], ")")), size = font, color = "black", location = paste0("+", ifelse(dmc_method == "dmc", 1.1 * w * i, 1.1 * w * (i - 1)), "+", h * 1.05))
   }
 
   colours
