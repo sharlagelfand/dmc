@@ -103,11 +103,12 @@ for a given DMC floss, I can use `undmc()`. By default, this visualizes
 the DMC floss:
 
 ``` r
-undmc("Ecru")
-#> # A tibble: 1 x 6
-#>   dmc   name  hex       red green  blue
-#>   <chr> <chr> <chr>   <dbl> <dbl> <dbl>
-#> 1 Ecru  Ecru  #F0EADA   240   234   218
+undmc(c("Ecru", "B5200"))
+#> # A tibble: 2 x 6
+#>   dmc   name       hex       red green  blue
+#>   <chr> <chr>      <chr>   <dbl> <dbl> <dbl>
+#> 1 Ecru  Ecru       #F0EADA   240   234   218
+#> 2 B5200 Snow White #FFFFFF   255   255   255
 ```
 
 ![](man/figures/README-undmc-1.png)<!-- -->

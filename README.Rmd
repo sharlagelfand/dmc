@@ -74,7 +74,7 @@ dmc(dplyr_background, n = 3, method = "cie94")
 If I want to go the *other* way and just find the hex/RGB information for a given DMC floss, I can use `undmc()`. By default, this visualizes the DMC floss:
 
 ```{r undmc}
-undmc("Ecru")
+undmc(c("Ecru", "B5200"))
 ```
 
 Again, the visualization can be turned off:

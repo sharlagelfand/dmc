@@ -62,6 +62,9 @@ undmc <- function(dmc, visualize = TRUE) {
     floss_match <- dmc::floss %>%
       dplyr::filter(
         .data$dmc %in% colour
+      ) %>%
+      dplyr::arrange(
+        match(.data$dmc, colour)
       )
     colour <- floss_match[["hex"]]
   }

@@ -13,6 +13,16 @@ test_that("undmc returns an object of class dmc_df with elements dmc and viz", {
   expect_equal(names(x), c("dmc", "viz"))
 })
 
+test_that("undmc returns in the same order as supplied", {
+  x <- c("Ecru", "B5200")
+  res <- undmc(x)
+  expect_equal(res[["dmc"]][["dmc"]], x)
+  x <- rev(x)
+  res <- undmc(x)
+  expect_equal(res[["dmc"]][["dmc"]], x)
+}
+)
+
 test_that("undmc$viz is of class magick-image if visualize = TRUE and is NULL if it is false", {
   expect_s3_class(undmc(310, visualize = TRUE)[["viz"]], "magick-image")
   expect_null(undmc(310, visualize = FALSE)[["viz"]])
