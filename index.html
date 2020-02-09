@@ -114,11 +114,12 @@
 <a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; 3 740   Tangerine       #FF8B00   255   139     0</span></a></code></pre></div>
 <p><img src="reference/figures/README-dmc-dplyr-cie94-1.png"><!-- --></p>
 <p>If I want to go the <em>other</em> way and just find the hex/RGB information for a given DMC floss, I can use <code><a href="reference/undmc.html">undmc()</a></code>. By default, this visualizes the DMC floss:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="reference/undmc.html">undmc</a></span>(<span class="st">"Ecru"</span>)</a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co">#&gt; # A tibble: 1 x 6</span></a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co">#&gt;   dmc   name  hex       red green  blue</span></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co">#&gt; 1 Ecru  Ecru  #F0EADA   240   234   218</span></a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="reference/undmc.html">undmc</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Ecru"</span>, <span class="st">"B5200"</span>))</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co">#&gt;   dmc   name       hex       red green  blue</span></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co">#&gt; 1 Ecru  Ecru       #F0EADA   240   234   218</span></a>
+<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#&gt; 2 B5200 Snow White #FFFFFF   255   255   255</span></a></code></pre></div>
 <p><img src="reference/figures/README-undmc-1.png"><!-- --></p>
 <p>Again, the visualization can be turned off:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="reference/undmc.html">undmc</a></span>(<span class="dv">310</span>, <span class="dt">visualize =</span> <span class="ot">FALSE</span>)</a>
