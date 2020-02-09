@@ -1,6 +1,6 @@
 Package: dmc
 Title: Convert Colour to DMC Embroidery Floss and Back
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: 
     person(given = "Sharla",
            family = "Gelfand",
