@@ -52,7 +52,7 @@ dplyr_background <- "#EE8726"
 dmc(dplyr_background)
 #> # A tibble: 1 x 6
 #>   dmc   name            hex       red green  blue
-#>   <chr> <chr>           <chr>   <dbl> <dbl> <dbl>
+#> * <chr> <chr>           <chr>   <dbl> <dbl> <dbl>
 #> 1 970   Pumpkin - Light #F78B13   247   139    19
 ```
 
@@ -64,7 +64,7 @@ I can choose to show more than one matching colour:
 dmc(dplyr_background, n = 3)
 #> # A tibble: 3 x 6
 #>   dmc   name                  hex       red green  blue
-#>   <chr> <chr>                 <chr>   <dbl> <dbl> <dbl>
+#> * <chr> <chr>                 <chr>   <dbl> <dbl> <dbl>
 #> 1 970   Pumpkin - Light       #F78B13   247   139    19
 #> 2 922   Copper - Light        #E27323   226   115    35
 #> 3 721   Orange Spice - Medium #F27842   242   120    66
@@ -78,7 +78,7 @@ And to turn off the visualization of the colours:
 dmc(dplyr_background, visualize = FALSE)
 #> # A tibble: 1 x 6
 #>   dmc   name            hex       red green  blue
-#>   <chr> <chr>           <chr>   <dbl> <dbl> <dbl>
+#> * <chr> <chr>           <chr>   <dbl> <dbl> <dbl>
 #> 1 970   Pumpkin - Light #F78B13   247   139    19
 ```
 
@@ -90,7 +90,7 @@ colour. The method can be changed to be one of “euclidean”, “cie1976”,
 dmc(dplyr_background, n = 3, method = "cie94")
 #> # A tibble: 3 x 6
 #>   dmc   name            hex       red green  blue
-#>   <chr> <chr>           <chr>   <dbl> <dbl> <dbl>
+#> * <chr> <chr>           <chr>   <dbl> <dbl> <dbl>
 #> 1 971   Pumpkin         #F67F00   246   127     0
 #> 2 970   Pumpkin - Light #F78B13   247   139    19
 #> 3 740   Tangerine       #FF8B00   255   139     0
@@ -106,7 +106,7 @@ the DMC floss:
 undmc(c("Ecru", "B5200"))
 #> # A tibble: 2 x 6
 #>   dmc   name       hex       red green  blue
-#>   <chr> <chr>      <chr>   <dbl> <dbl> <dbl>
+#> * <chr> <chr>      <chr>   <dbl> <dbl> <dbl>
 #> 1 Ecru  Ecru       #F0EADA   240   234   218
 #> 2 B5200 Snow White #FFFFFF   255   255   255
 ```
@@ -119,7 +119,7 @@ Again, the visualization can be turned off:
 undmc(310, visualize = FALSE)
 #> # A tibble: 1 x 6
 #>   dmc   name  hex       red green  blue
-#>   <chr> <chr> <chr>   <dbl> <dbl> <dbl>
+#> * <chr> <chr> <chr>   <dbl> <dbl> <dbl>
 #> 1 310   Black #000000     0     0     0
 ```
 

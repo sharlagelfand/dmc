@@ -1,31 +1,31 @@
 # dmc
 
-test_that("dmc returns an object of class dmc_df with elements dmc and viz", {
+test_that("dmc returns an object of class dmc_df (+ tibble classes) with visualization attribute of class magick-image", {
   x <- dmc("#000000")
-  expect_is(x, "dmc_df")
-  expect_equal(names(x), c("dmc", "viz"))
+  expect_s3_class(x, c("dmc_df", "tbl_df", "tbl", "data.frame"))
+  expect_s3_class(attr(x, "visualization"), "magick-image")
 })
 
 # undmc
-test_that("undmc returns an object of class dmc_df with elements dmc and viz", {
+test_that("undmc returns an object of class dmc_df (+ tibble classes) with visualization attribute", {
   x <- undmc("Ecru")
-  expect_is(x, "dmc_df")
-  expect_equal(names(x), c("dmc", "viz"))
+  expect_s3_class(x, c("dmc_df", "tbl_df", "tbl", "data.frame"))
+  expect_s3_class(attr(x, "visualization"), "magick-image")
 })
 
 test_that("undmc returns in the same order as supplied", {
   x <- c("Ecru", "B5200")
   res <- undmc(x)
-  expect_equal(res[["dmc"]][["dmc"]], x)
+  expect_equal(res[["dmc"]], x)
   x <- rev(x)
   res <- undmc(x)
-  expect_equal(res[["dmc"]][["dmc"]], x)
+  expect_equal(res[["dmc"]], x)
 }
 )
 
-test_that("undmc$viz is of class magick-image if visualize = TRUE and is NULL if it is false", {
-  expect_s3_class(undmc(310, visualize = TRUE)[["viz"]], "magick-image")
-  expect_null(undmc(310, visualize = FALSE)[["viz"]])
+test_that("the visualization attribute is of class magick-image if visualize = TRUE and doesn't exist if it's false", {
+  expect_s3_class(attr(undmc(310, visualize = TRUE), "visualization"), "magick-image")
+  expect_null(attr(undmc(310, visualize =  FALSE), "visualization"))
 })
 
 test_that("wrap_name wraps the floss name if it is more than 23 characters", {
