@@ -86,14 +86,14 @@
 <a class="sourceLine" id="cb2-5" data-line-number="5"><span class="kw"><a href="reference/dmc.html">dmc</a></span>(dplyr_background)</a>
 <a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt; # A tibble: 1 x 6</span></a>
 <a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt;   dmc   name            hex       red green  blue</span></a>
-<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt;           &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt; * &lt;chr&gt; &lt;chr&gt;           &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
 <a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt; 1 970   Pumpkin - Light #F78B13   247   139    19</span></a></code></pre></div>
 <p><img src="reference/figures/README-dmc-dplyr-1.png"><!-- --></p>
 <p>I can choose to show more than one matching colour:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="reference/dmc.html">dmc</a></span>(dplyr_background, <span class="dt">n =</span> <span class="dv">3</span>)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co">#&gt; # A tibble: 3 x 6</span></a>
 <a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt;   dmc   name                  hex       red green  blue</span></a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt;                 &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt; * &lt;chr&gt; &lt;chr&gt;                 &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
 <a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt; 1 970   Pumpkin - Light       #F78B13   247   139    19</span></a>
 <a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt; 2 922   Copper - Light        #E27323   226   115    35</span></a>
 <a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt; 3 721   Orange Spice - Medium #F27842   242   120    66</span></a></code></pre></div>
@@ -102,13 +102,13 @@
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="reference/dmc.html">dmc</a></span>(dplyr_background, <span class="dt">visualize =</span> <span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; # A tibble: 1 x 6</span></a>
 <a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt;   dmc   name            hex       red green  blue</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt;           &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; * &lt;chr&gt; &lt;chr&gt;           &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
 <a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; 1 970   Pumpkin - Light #F78B13   247   139    19</span></a></code></pre></div>
 <p>By default, <code><a href="reference/dmc.html">dmc()</a></code> uses Euclidean distance to find the closest floss colour. The method can be changed to be one of “euclidean”, “cie1976”, “cie94”, “cie2000”, or “cmc”. For example:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="reference/dmc.html">dmc</a></span>(dplyr_background, <span class="dt">n =</span> <span class="dv">3</span>, <span class="dt">method =</span> <span class="st">"cie94"</span>)</a>
 <a class="sourceLine" id="cb5-2" data-line-number="2"><span class="co">#&gt; # A tibble: 3 x 6</span></a>
 <a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co">#&gt;   dmc   name            hex       red green  blue</span></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt;           &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt; * &lt;chr&gt; &lt;chr&gt;           &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
 <a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt; 1 971   Pumpkin         #F67F00   246   127     0</span></a>
 <a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt; 2 970   Pumpkin - Light #F78B13   247   139    19</span></a>
 <a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; 3 740   Tangerine       #FF8B00   255   139     0</span></a></code></pre></div>
@@ -117,7 +117,7 @@
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="reference/undmc.html">undmc</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Ecru"</span>, <span class="st">"B5200"</span>))</a>
 <a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
 <a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co">#&gt;   dmc   name       hex       red green  blue</span></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#&gt; * &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
 <a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co">#&gt; 1 Ecru  Ecru       #F0EADA   240   234   218</span></a>
 <a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#&gt; 2 B5200 Snow White #FFFFFF   255   255   255</span></a></code></pre></div>
 <p><img src="reference/figures/README-undmc-1.png"><!-- --></p>
@@ -125,7 +125,7 @@
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="reference/undmc.html">undmc</a></span>(<span class="dv">310</span>, <span class="dt">visualize =</span> <span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb7-2" data-line-number="2"><span class="co">#&gt; # A tibble: 1 x 6</span></a>
 <a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co">#&gt;   dmc   name  hex       red green  blue</span></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="co">#&gt; * &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
 <a class="sourceLine" id="cb7-5" data-line-number="5"><span class="co">#&gt; 1 310   Black #000000     0     0     0</span></a></code></pre></div>
 <p><code><a href="reference/undmc.html">undmc()</a></code> mostly just takes the DMC floss number, except in cases where there isn’t one (e.g., Ecru).</p>
 <p>A full list of floss colours in the package is available via <code>floss</code>:</p>
