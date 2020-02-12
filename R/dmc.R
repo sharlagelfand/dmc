@@ -45,19 +45,19 @@ undmc <- function(dmc, visualize = TRUE) {
     colour_rgb <- farver::decode_colour(colour)
 
     floss_dists <- dmc::floss %>%
-      dplyr::mutate(
-        rgb = purrr::pmap(list(.data$red, .data$green, .data$blue), c),
-        dist = purrr::map_dbl(.data$rgb, function(x) {
-          colour_matrix <- matrix(x, ncol = 3)
-          farver::compare_colour(from = colour_matrix, to = colour_rgb, from_space = "rgb", method = method)
-        })
-      ) %>%
-      dplyr::select(-.data$rgb)
+      tibble::column_to_rownames(var = "dmc") %>%
+      dplyr::select(.data$red, .data$green, .data$blue) %>%
+      as.matrix() %>%
+      farver::compare_colour(to = colour_rgb, from_space = "rgb", method = method) %>%
+      tibble::as_tibble(rownames = "dmc")
+
+    names(floss_dists) <- c("dmc", "dist")
 
     floss_match <- floss_dists %>%
       dplyr::arrange(.data$dist) %>%
       dplyr::select(-.data$dist) %>%
-      dplyr::slice(1:n)
+      dplyr::slice(1:n) %>%
+      dplyr::left_join(dmc::floss, by = "dmc")
   } else if (dmc_method == "undmc") {
     floss_match <- dmc::floss %>%
       dplyr::filter(
