@@ -8,3 +8,5 @@
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
+^man/figures/logo-full\.png$
+^vector-images$

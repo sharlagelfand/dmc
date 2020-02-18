@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 library(emo)
 ```
 
-# dmc
+# dmc <img src='man/figures/logo.png' align="right" height="138.5"/>
 
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.org/sharlagelfand/dmc.svg?branch=master)](https://travis-ci.org/sharlagelfand/dmc)
