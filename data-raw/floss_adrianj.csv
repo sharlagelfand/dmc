@@ -50,6 +50,7 @@ Floss#,Description,Red,Green,Blue,RGB code,Row
 3731,Dusty Rose Very Dark,218,103,131,DA6783,row 03-04
 3350,Dusty Rose Ultra Dark,188,67,101,BC4365,row 03-05
 150,Dusty Rose Ult Vy Dk,171,2,73,AB0249,row 03-06
+23,Apple Blossom,237,226,237,EDE2ED,
 3689,Mauve Light,251,191,194,FBBFC2,row 03-07
 3688,Mauve Medium,231,169,172,E7A9AC,row 03-08
 3687,Mauve,201,107,112,C96B70,row 03-09
@@ -70,6 +71,9 @@ Floss#,Description,Red,Green,Blue,RGB code,Row
 718,Plum,156,36,98,9C2462,row 03-24
 917,Plum Medium,155,19,89,9B1359,row 03-25
 915,Plum Dark,130,0,67,820043,row 03-26
+33,Fuschia,156,89,158,9C599C,
+34,Dark Fuschia,125,48,100,7D3064,
+35,Very Dark Fuschia,70,5,45,46052D,
 225,Shell Pink Ult Vy Lt,255,223,213,FFDFD7,row 04-01
 224,Shell Pink Very Light,235,183,175,EBB7AF,row 04-02
 152,Shell Pink Med Light,226,160,153,E2A099,row 04-03
@@ -92,6 +96,9 @@ Floss#,Description,Red,Green,Blue,RGB code,Row
 3835,Grape Medium,148,96,131,946083,row 04-20
 3834,Grape Dark,114,55,93,72375D,row 04-21
 154,Grape Very Dark,87,36,51,572433,row 04-22
+24,White Lavender,224,215,238,E0D7EE,
+25,Ultra Light Lavender,218,210,233,DAD2E9,
+26,Pale Lavender,215,202,230,D7CAE6,
 211,Lavender Light,227,203,227,E3CBE3,row 05-01
 210,Lavender Medium,195,159,195,D29FC3,row 05-02
 209,Lavender Dark,163,123,167,A37BA7,row 05-03
@@ -101,8 +108,11 @@ Floss#,Description,Red,Green,Blue,RGB code,Row
 153,Violet Very Light,230,204,217,E6CCD9,row 05-07
 554,Violet Light,219,179,203,DBB3CB,row 05-08
 553,Violet,163,99,139,A3638B,row 05-09
-552,Violet  Medium,128,58,107,803A6B,row 05-10
+552,Violet Medium,128,58,107,803A6B,row 05-10
 550,Violet Very Dark,92,24,78,5C184E,row 05-11
+27,White Violet,240,238,249,F0EEF9,
+28,Medium Light Eggplant,144,134,169,9086A9,
+29,Eggplant,103,64,118,674076,
 3747,Blue Violet Vy Lt,211,215,237,D3D7ED,row 05-12
 341,Blue Violet Light,183,191,221,B7BFDD,row 05-13
 156,Blue Violet Med Lt,163,174,209,A3AED1,row 05-14
@@ -110,6 +120,9 @@ Floss#,Description,Red,Green,Blue,RGB code,Row
 155,Blue Violet Med Dark,152,145,182,9891B6,row 05-16
 3746,Blue Violet Dark,119,107,152,776B98,row 05-17
 333,Blue Violet Very Dark,92,84,120,5C5478,row 05-18
+30,Medium Light Blueberry,125,119,165,7D77A5,
+31,Blueberry,80,81,141,50518D,
+32,Dark Blueberry,77,46,138,4D2E8A,
 157,Cornflower Blue Vy Lt,187,195,217,BBC3D9,row 05-19
 794,Cornflower Blue Light,143,156,193,8F9CC1,row 05-20
 793,Cornflower Blue Med,112,125,162,707DA2,row 05-21
@@ -215,6 +228,7 @@ Floss#,Description,Red,Green,Blue,RGB code,Row
 501,Blue Green Dark,57,111,82,396F52,row 09-26
 500,Blue Green Vy Dk,4,77,51,044D33,row 09-27
 955,Nile Green Light,162,214,173,A2D6AD,row 10-01
+13,Medium Light Nile Green,191,246,224,BFF6E0,
 954,Nile Green,136,186,145,88BA91,row 10-02
 913,Nile Green Med,109,171,119,6DAB77,row 10-03
 912,Emerald Green Lt,27,157,107,1B9D6B,row 10-04
@@ -229,7 +243,7 @@ Floss#,Description,Red,Green,Blue,RGB code,Row
 319,Pistachio Grn Vy Dk,32,95,46,205F2E,row 10-13
 890,Pistachio Grn Ult V D,23,73,35,184923,row 10-14
 164,Forest Green Lt,200,216,184,C8D8B8,row 10-15
-989,Forest Green ,141,166,117,8DA675,row 10-16
+989,Forest Green,141,166,117,8DA675,row 10-16
 988,Forest Green Med,115,139,91,738B5B,row 10-17
 987,Forest Green Dk,88,113,65,587141,row 10-18
 986,Forest Green Vy Dk,64,82,48,405230,row 10-19
@@ -239,6 +253,9 @@ Floss#,Description,Red,Green,Blue,RGB code,Row
 3346,Hunter Green,64,106,58,406A3A,row 10-23
 3345,Hunter Green Dk,27,89,21,1B5915,row 10-24
 895,Hunter Green Vy Dk,27,83,0,1B5300,row 10-25
+14,Pale Apple Green,208,251,178,D0FBB2,
+15,Apple Green,209,237,164,D1EDA4,
+16,Light Chartreuse,201,194,88,C9C258,
 704,Chartreuse Bright,158,207,52,9ECF34,row 11-01
 703,Chartreuse,123,181,71,7BB547,row 11-02
 702,Kelly Green,71,167,47,47A72F,row 11-03
@@ -267,6 +284,9 @@ Floss#,Description,Red,Green,Blue,RGB code,Row
 3364,Pine Green,131,151,95,83975F,row 12-01
 3363,Pine Green Md,114,130,86,728256,row 12-02
 3362,Pine Green Dk,94,107,71,5E6B47,row 12-03
+10,Very Light Tender Green,237,254,217,EDFED9,
+11,Light Tender Green,226,237,181,E2EDB5,
+12,Tender Green,205,217,154,CDD99A,
 165,Moss Green Vy Lt,239,244,164,EFF4A4,row 12-04
 3819,Moss Green Lt,224,232,104,E0E868,row 12-05
 166,Moss Green Md Lt,192,200,64,C0C840,row 12-06
@@ -283,6 +303,8 @@ Floss#,Description,Red,Green,Blue,RGB code,Row
 372,Mustard Lt,204,183,132,CCB784,row 12-17
 371,Mustard,191,166,113,BFA671,row 12-18
 370,Mustard Medium,184,157,100,B89D64,row 12-19
+17,Light Yellow Plum,229,226,114,E5E272,
+18,Yellow Plum,217,213,109,D9D56D,
 834,Golden Olive Vy Lt,219,190,127,DBBE7F,row 12-20
 833,Golden Olive Lt,200,171,108,C8AB6C,row 12-21
 832,Golden Olive,189,155,81,BD9B51,row 12-22
@@ -362,6 +384,7 @@ Floss#,Description,Red,Green,Blue,RGB code,Row
 300,Mahogany Vy Dk,111,47,0,6F2F00,row 15-18
 3823,Yellow Ultra Pale,255,253,227,FFFDE3,row 15-19
 3855,Autumn Gold Lt,250,211,150,FAD396,row 15-20
+19,Medium Light Autumn Gold,247,201,95,F7C95F,
 3854,Autumn Gold Med,242,175,104,F2AF68,row 15-21
 3853,Autumn Gold Dk,242,151,70,F29746,row 15-22
 3827,Golden Brown Pale,247,187,119,F7BB77,row 16-01
@@ -382,6 +405,9 @@ Floss#,Description,Red,Green,Blue,RGB code,Row
 3859,Rosewood Light,186,139,124,BA8B7C,row 16-16
 3858,Rosewood Med,150,74,63,964A3F,row 16-17
 3857,Rosewood Dark,104,37,26,68251A,row 16-18
+20,Shrimp,247,175,147,F7AF93,
+21,Light Alizarin,215,153,130,D79982,
+22,Alizarin,188,96,78,BC604E,
 3774,Desert Sand Vy Lt,243,225,215,F3E1D7,row 16-19
 950,Desert Sand Light,238,211,196,EED3C4,row 16-20
 3064,Desert Sand,196,142,112,C48E70,row 16-21
@@ -395,6 +421,7 @@ Floss#,Description,Red,Green,Blue,RGB code,Row
 3861,Cocoa Light,166,136,129,A68881,row 17-04
 3860,Cocoa,125,93,87,7D5D57,row 17-05
 779,Cocoa Dark,98,75,69,624B45,row 17-06
+9,Very Dark Cocoa,85,32,14,552014,
 712,Cream,255,251,239,FFFBEF,row 17-07
 739,Tan Ult Vy Lt,248,228,200,F8E4C8,row 17-08
 738,Tan Very Light,236,204,158,ECCC9E,row 17-09
@@ -432,6 +459,10 @@ Ecru,Ecru,240,234,218,F0EADA,row 18-04
 3790,Beige Gray Ult Dk,127,106,85,7F6A55,row 18-18
 3781,Mocha Brown Dk,107,87,67,6B5743,row 18-19
 3866,Mocha Brn Ult Vy Lt,250,246,240,FAF6F0,row 18-20
+5,Light Driftwood,227,204,190,E3CCBE,
+6,Medium Light Driftwood,220,198,184,DCC6B8,
+7,Driftwood,143,123,110,8F7B6E,
+8,Dark Driftwood,106,80,70,6A5046,
 842,Beige Brown Vy Lt,209,186,161,D1BAA1,row 18-21
 841,Beige Brown Lt,182,155,126,B69B7E,row 18-22
 840,Beige Brown Med,154,124,92,9A7C5C,row 18-23
@@ -447,6 +478,10 @@ Ecru,Ecru,240,234,218,F0EADA,row 18-04
 415,Pearl Gray,211,211,214,D3D3D6,row 19-08
 318,Steel Gray Lt,171,171,171,ABABAB,row 19-09
 414,Steel Gray Dk,140,140,140,8C8C8C,row 19-10
+1,White Tin,227,227,230,E3E3E6,
+2,Tin,215,215,216,D7D7D8,
+3,Medium Tin,184,184,187,B8B8BB,
+4,Dark Tin,174,174,177,AEAEB1,
 168,Pewter Very Light,209,209,209,D1D1D1,row 19-11
 169,Pewter Light,132,132,132,848484,row 19-12
 317,Pewter Gray,108,108,108,6C6C6C,row 19-13
